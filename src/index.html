@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar</title>
+</head>
+<body>
+    <h1>Sumar dos numeros</h1>
+    <form id="sumaForm">
+        <input type="number" id="numero1" placeholder="numero1" required>
+        <input type="number" id="numero2" placeholder="numero2" required>
+        <button type="submit">Sumar</button>
+    </form>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script src="suma.js"></script>
+    <script>
+        // Corregido: El ID debe coincidir con el del formulario (sumaForm)
+        document.getElementById("sumaForm").addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            const num1 = parseFloat(document.getElementById('numero1').value);
+            const num2 = parseFloat(document.getElementById('numero2').value);
+            
+            // Corregido: nombres de variables iguales (num1 y resultado)
+            const resultadoFinal = sumar(num1, num2); 
+            
+            document.getElementById('resultado').innerText = resultadoFinal;
+        });
+    </script>
+</body>
+</html>
